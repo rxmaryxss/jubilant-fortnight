@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PinStock Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <main class="app-shell">
+      <header class="hero glass">
+        <div>
+          <p class="eyebrow">Aesthetic Content Ops</p>
+          <h1>PinStock Studio</h1>
+          <p class="subtitle">
+            Organize, restock, and update your Pinterest content pipeline in one dreamy dashboard.
+          </p>
+        </div>
+        <a class="pinterest-link" href="https://www.pinterest.com/" target="_blank" rel="noreferrer">
+          <span class="p-icon">P</span>
+          <span>View on Pinterest</span>
+        </a>
+      </header>
+
+      <section class="panel glass form-panel">
+        <h2>Add / Update a Pin Stock Item</h2>
+        <form id="pin-form">
+          <label>
+            Pin title
+            <input id="title" name="title" type="text" required placeholder="Summer Moodboard 2026" />
+          </label>
+          <label>
+            Category
+            <input id="category" name="category" type="text" required placeholder="Fashion, DIY, Recipes..." />
+          </label>
+          <label>
+            Board name
+            <input id="board" name="board" type="text" required placeholder="My Aesthetic Board" />
+          </label>
+          <label>
+            Quantity / Slots left
+            <input id="stock" name="stock" type="number" min="0" value="1" required />
+          </label>
+          <label>
+            Status
+            <select id="status" name="status">
+              <option value="Draft">Draft</option>
+              <option value="Scheduled">Scheduled</option>
+              <option value="Published">Published</option>
+            </select>
+          </label>
+          <label>
+            Pinterest URL (optional)
+            <input id="url" name="url" type="url" placeholder="https://www.pinterest.com/pin/..." />
+          </label>
+          <button type="submit">Save Item</button>
+        </form>
+      </section>
+
+      <section class="panel glass inventory-panel">
+        <div class="panel-head">
+          <h2>Your Pin Inventory</h2>
+          <button id="clear-all" class="danger">Clear All</button>
+        </div>
+        <div id="empty-state" class="empty-state">No items yet — add your first pin stock item ✨</div>
+        <div id="inventory" class="inventory-grid"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
