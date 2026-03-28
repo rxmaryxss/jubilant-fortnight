@@ -1,0 +1,250 @@
+:root {
+  --bg: #0b0b16;
+  --card: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.18);
+  --text: #f8f8ff;
+  --muted: #c9c8da;
+  --accent: #f72c8f;
+  --accent-2: #7d4dff;
+  --danger: #ff4d6d;
+  --success: #4cd9a6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 20% 10%, #211041, #0b0b16 40%), #0b0b16;
+  color: var(--text);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg-glow {
+  position: fixed;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.bg-glow-1 {
+  background: #ff4d9d;
+  top: -10rem;
+  right: -8rem;
+}
+
+.bg-glow-2 {
+  background: #734dff;
+  bottom: -12rem;
+  left: -8rem;
+}
+
+.app-shell {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.glass {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero {
+  padding: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+h1 {
+  margin: 0.35rem 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 42ch;
+}
+
+.pinterest-link {
+  text-decoration: none;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  font-weight: 700;
+}
+
+.p-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+.panel {
+  padding: 1.5rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+#pin-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  border-radius: 0.8rem;
+  padding: 0.65rem 0.75rem;
+}
+
+select option {
+  color: #111;
+}
+
+button {
+  border: 0;
+  border-radius: 0.8rem;
+  padding: 0.75rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+button.danger {
+  background: rgba(255, 77, 109, 0.18);
+  border: 1px solid rgba(255, 77, 109, 0.5);
+  color: #ffd4dd;
+}
+
+.empty-state {
+  color: var(--muted);
+  padding: 1.5rem 0.3rem;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+
+.pin-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1rem;
+  padding: 0.95rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.pin-card h3 {
+  margin: 0;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  display: inline-flex;
+  width: fit-content;
+}
+
+.status.Published {
+  color: #d3ffef;
+  background: rgba(76, 217, 166, 0.25);
+}
+
+.status.Scheduled {
+  color: #e2dcff;
+  background: rgba(125, 77, 255, 0.24);
+}
+
+.status.Draft {
+  color: #ffe5f2;
+  background: rgba(247, 44, 143, 0.22);
+}
+
+.pin-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.pin-actions a {
+  color: #ffd3ec;
+  font-size: 0.85rem;
+}
+
+.pin-actions button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  color: #f3ebff;
+  padding: 0.45rem 0.7rem;
+}
